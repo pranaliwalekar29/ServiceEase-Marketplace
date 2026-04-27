@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/serviceease
-    username: postgres
-    password: root
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/serviceease}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:root}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -17,5 +17,5 @@ server:
   port: 9090
 
 jwt:
-  secret: my-super-secret-key-my-super-secret-key
+  secret: ${JWT_SECRET:my-super-secret-key-my-super-secret-key}
   expiration: 86400000

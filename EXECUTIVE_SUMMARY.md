@@ -591,4 +591,3 @@ Slow:        8+ weeks (part-time)
 **For: ServiceEase Project**
 **Audience: Developer + Hiring Managers**
 
-

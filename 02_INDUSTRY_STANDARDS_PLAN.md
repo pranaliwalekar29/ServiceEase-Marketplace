@@ -652,4 +652,3 @@ After each phase, you can add to resume:
 
 **Next Step:** Start with PHASE 1 immediately using commands from upload guide!
 
-
