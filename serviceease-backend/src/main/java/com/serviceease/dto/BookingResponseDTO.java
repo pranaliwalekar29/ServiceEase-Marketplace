@@ -1,51 +1,28 @@
 package com.serviceease.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.LocalDate;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Schema(description = "Booking response payload")
 public class BookingResponseDTO {
+    @Schema(description = "Booking identifier", example = "10")
     private Long bookingId;
+
+    @Schema(description = "Booked service name", example = "Home Cleaning")
     private String serviceName;
+
+    @Schema(description = "Provider name for the booked service", example = "Anita Patel")
     private String providerName;
+
+    @Schema(description = "Date of the booking", example = "2026-05-10")
     private LocalDate bookingDate;
+
+    @Schema(description = "Current booking status", example = "REQUESTED")
     private String status;
 
-    public Long getBookingId() {
-        return bookingId;
-    }
-
-    public void setBookingId(Long bookingId) {
-        this.bookingId = bookingId;
-    }
-
-    public String getServiceName() {
-        return serviceName;
-    }
-
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
-    }
-
-    public String getProviderName() {
-        return providerName;
-    }
-
-    public void setProviderName(String providerName) {
-        this.providerName = providerName;
-    }
-
-    public LocalDate getBookingDate() {
-        return bookingDate;
-    }
-
-    public void setBookingDate(LocalDate bookingDate) {
-        this.bookingDate = bookingDate;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 }

@@ -1,71 +1,34 @@
 package com.serviceease.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.math.BigDecimal;
 
+@Setter
+@Getter
+@Schema(description = "Response payload for a service listing")
 public class ServiceResponseDTO {
+    @Schema(description = "Service identifier", example = "12")
     private Long id;
+
+    @Schema(description = "Name of the service", example = "Grocery Delivery")
     private String serviceName;
+
+    @Schema(description = "Description of the service")
     private String description;
+
+    @Schema(description = "Service price", example = "499.99")
     private BigDecimal price;
 
+    @Schema(description = "Provider identifier for the service", example = "7")
     private Long providerId;
+
+    @Schema(description = "Provider name", example = "Asha Singh")
     private String providerName;
 
+    @Schema(description = "Category name for the service", example = "Delivery")
     private String categoryName;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getServiceName() {
-        return serviceName;
-    }
-
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
-
-    public Long getProviderId() {
-        return providerId;
-    }
-
-    public void setProviderId(Long providerId) {
-        this.providerId = providerId;
-    }
-
-    public String getProviderName() {
-        return providerName;
-    }
-
-    public void setProviderName(String providerName) {
-        this.providerName = providerName;
-    }
 }

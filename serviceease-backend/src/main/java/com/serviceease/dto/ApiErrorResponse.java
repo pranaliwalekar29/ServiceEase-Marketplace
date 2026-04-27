@@ -1,33 +1,22 @@
 package com.serviceease.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.time.LocalDateTime;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Schema(description = "Standard API error response payload")
 public class ApiErrorResponse {
+    @Schema(description = "HTTP status code", example = "400")
     private int status;
+
+    @Schema(description = "Error message describing the problem", example = "Validation failed")
     private String message;
+
+    @Schema(description = "Timestamp when the error occurred")
     private LocalDateTime timestamp;
 
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
-    }
 }

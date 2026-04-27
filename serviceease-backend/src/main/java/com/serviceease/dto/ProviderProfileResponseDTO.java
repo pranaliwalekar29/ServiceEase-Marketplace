@@ -1,54 +1,29 @@
 package com.serviceease.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.math.BigDecimal;
 
+@Getter
+@Setter
+@Schema(description = "Response payload for provider profile details")
 public class ProviderProfileResponseDTO {
 
+    @Schema(description = "Provider profile identifier", example = "7")
     private Long id;
+
+    @Schema(description = "Provider biography", example = "Experienced home cleaning specialist")
     private String bio;
+
+    @Schema(description = "Whether the provider is approved", example = "true")
     private boolean approved;
+
+    @Schema(description = "Average rating for provider", example = "4.8")
     private BigDecimal averageRating;
+
+    @Schema(description = "Reason for provider rejection, if any")
     private String rejectionReason;
 
-    // getters & setters
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getBio() {
-        return bio;
-    }
-
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
-
-    public boolean isApproved() {
-        return approved;
-    }
-
-    public void setApproved(boolean approved) {
-        this.approved = approved;
-    }
-
-    public BigDecimal getAverageRating() {
-        return averageRating;
-    }
-
-    public void setAverageRating(BigDecimal averageRating) {
-        this.averageRating = averageRating;
-    }
-
-    public String getRejectionReason() {
-        return rejectionReason;
-    }
-
-    public void setRejectionReason(String rejectionReason) {
-        this.rejectionReason = rejectionReason;
-    }
 }

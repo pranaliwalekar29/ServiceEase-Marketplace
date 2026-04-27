@@ -1,49 +1,30 @@
 package com.serviceease.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Schema(description = "Summary view of a service listing")
 public class ServiceSummaryDTO {
-        private Long serviceId;
-        private String serviceName;
-        private String categoryName;
-        private Integer price;
-        private String description;
+    @Schema(description = "Service identifier", example = "12")
+    private Long serviceId;
 
-    public Long getServiceId() {
-        return serviceId;
-    }
+    @Schema(description = "Service name", example = "Plumbing")
+    private String serviceName;
 
-    public void setServiceId(Long serviceId) {
-        this.serviceId = serviceId;
-    }
+    @Schema(description = "Service category name", example = "Home Repair")
+    private String categoryName;
 
-    public String getServiceName() {
-        return serviceName;
-    }
+    @Schema(description = "Service price", example = "1200")
+    private Integer price;
 
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
-    }
+    @Schema(description = "Short service description")
+    private String description;
 
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }

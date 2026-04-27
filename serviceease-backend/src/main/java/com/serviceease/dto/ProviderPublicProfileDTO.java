@@ -1,67 +1,33 @@
 package com.serviceease.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.math.BigDecimal;
 import java.util.List;
 
+@Setter
+@Getter
+@Schema(description = "Public profile data for a provider")
 public class ProviderPublicProfileDTO {
 
-        private Long providerId;
-        private String name;
-        private String bio;
-        private boolean approved;
-        private BigDecimal averageRating;
+    @Schema(description = "Provider identifier", example = "5")
+    private Long providerId;
 
-        private List<ProviderServiceDTO> services;
+    @Schema(description = "Provider display name", example = "Suresh Kumar")
+    private String name;
 
-        // getters & setters
+    @Schema(description = "Provider biography", example = "Plumbing and electrical expert")
+    private String bio;
 
-        public Long getProviderId() {
-            return providerId;
-        }
+    @Schema(description = "Whether provider is approved for public listing", example = "true")
+    private boolean approved;
 
-        public void setProviderId(Long providerId) {
-            this.providerId = providerId;
-        }
+    @Schema(description = "Average rating of provider", example = "4.5")
+    private BigDecimal averageRating;
 
-        public String getName() {
-            return name;
-        }
+    @Schema(description = "List of services offered by the provider")
+    private List<ProviderServiceDTO> services;
 
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getBio() {
-            return bio;
-        }
-
-        public void setBio(String bio) {
-            this.bio = bio;
-        }
-
-        public boolean isApproved() {
-            return approved;
-        }
-
-        public void setApproved(boolean approved) {
-            this.approved = approved;
-        }
-
-        public BigDecimal getAverageRating() {
-            return averageRating;
-        }
-
-        public void setAverageRating(BigDecimal averageRating) {
-            this.averageRating = averageRating;
-        }
-
-        public List<ProviderServiceDTO> getServices() {
-            return services;
-        }
-
-        public void setServices(List<ProviderServiceDTO> services) {
-            this.services = services;
-        }
-    }
-
-
+}

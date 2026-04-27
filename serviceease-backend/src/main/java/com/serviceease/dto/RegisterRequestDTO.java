@@ -1,57 +1,33 @@
 package com.serviceease.dto;
 
 import com.serviceease.enums.Role;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.Setter;
 
-    public class RegisterRequestDTO {
+@Schema(description = "User registration request payload")
+@Setter
+@Getter
+public class RegisterRequestDTO {
 
-        @NotBlank
-        private String name;
+    @Schema(description = "Full name of the new user", example = "Priya Sharma")
+    @NotBlank
+    private String name;
 
-        @Email
-        @NotBlank
-        private String email;
+    @Schema(description = "User email for login", example = "user@example.com")
+    @Email
+    @NotBlank
+    private String email;
 
-        @NotBlank
-        private String password;
+    @Schema(description = "Password for the new account", example = "P@ssw0rd")
+    @NotBlank
+    private String password;
 
-        @NotNull
-        private Role role;
+    @Schema(description = "Role assigned to the user", example = "CUSTOMER")
+    @NotNull
+    private Role role;
 
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getEmail() {
-            return email;
-        }
-
-        public void setEmail(String email) {
-            this.email = email;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-
-        public Role getRole() {
-            return role;
-        }
-
-        public void setRole(Role role) {
-            this.role = role;
-        }
-    }
-
-
-
+}
